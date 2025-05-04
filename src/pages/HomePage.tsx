@@ -49,7 +49,7 @@ const LandingPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header/Navigation */}
-      <header className="bg-gradient-to-r from-zinc-600 to-zinc-700 text-white">
+      <header className="bg-zinc-800 text-white">
         <div className="container mx-auto px-4 py-6">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold">ACME INC</div>
@@ -69,7 +69,7 @@ const LandingPage = () => {
                       Sign out
                     </Button>
                   ) : (
-                    <Link to="/auth">
+                    <Link to="/signin">
                       <Button
                         variant="secondary"
                         className="text-zinc-600 hover:bg-zinc-100"
