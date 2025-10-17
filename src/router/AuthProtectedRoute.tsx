@@ -16,7 +16,14 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 const AuthProtectedRoute = () => {
   const { session } = useSession();
   if (!session) {
@@ -43,6 +50,16 @@ const AuthProtectedRoute = () => {
             </BreadcrumbList>
           </Breadcrumb>
         </header>
+        <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead>Name</TableHead>
+              <TableHead>Email</TableHead>
+              <TableHead>Role</TableHead>
+              <TableHead>Action</TableHead>
+            </TableRow>
+          </TableHeader>
+        </Table>
         <Outlet />
       </SidebarInset>
     </SidebarProvider>

@@ -1,8 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/HomePage.tsx";
-import ProtectedPage from "../pages/ProtectedPage.tsx";
+import { MedicalSuppliesPage } from "../pages/MedicalSuppliesPage.tsx";
 import NotFoundPage from "../pages/404Page.tsx";
-import AuthProtectedRoute from "./AuthProtectedRoute.tsx";
 import Providers from "../Providers.tsx";
 import { AuthPage } from "@/pages/AuthPage.tsx";
 
@@ -12,25 +10,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <Providers />,
     children: [
-      // Public routes
+      // Auth Home Page - this is the main home page
       {
-        path: "/",
-        element: <HomePage />,
-      },
-      {
-        path: "/auth",
+        index: true,
         element: <AuthPage />,
       },
-      // Auth Protected routes
+      // Medical Supplies Page (Protected)
       {
-        path: "/",
-        element: <AuthProtectedRoute />,
-        children: [
-          {
-            path: "/protected",
-            element: <ProtectedPage />,
-          },
-        ],
+        path: "dashboard",
+        element: <MedicalSuppliesPage />,
       },
     ],
   },
